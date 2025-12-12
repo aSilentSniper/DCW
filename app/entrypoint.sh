@@ -40,6 +40,9 @@ crond -b
 # Start PHP-FPM
 php-fpm83 -D
 
+# Start watcher in background
+/app/watcher.sh </dev/null >/dev/null 2>&1 &
+
 # Run dockcheck once
 [ -x /app/dockcheck ] && /app/dockcheck
 
